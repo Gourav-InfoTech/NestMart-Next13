@@ -16,8 +16,9 @@ const productsApi = async ()=>{
 
 
 export default function Home() {
-  const data = use(productsApi())
 
+  const data = use(productsApi())
+  
   return (
     <>
       <div className=" common_width section_padding">
