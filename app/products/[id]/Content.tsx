@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import Image from "next/image";
+// hello
 
 const Content = ({ data }: { data: any }) => {
   return (
@@ -10,7 +11,7 @@ const Content = ({ data }: { data: any }) => {
       <div className="item">
         <div>
           <div className="item_image ">
-            <img src={data.image} alt="" />
+            <Image src={data.image} alt="" />
           </div>
           <p className="text-xs py-2 text-[#adadad]">{data.category}</p>
           <h2 className="pb-2 text-[15px] font-[Quicksand] font-bold text-[#253d4e] leading-5">
