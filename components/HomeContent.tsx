@@ -1,5 +1,4 @@
 "use client";
-import { Product_Api } from "@/Utils/Api";
 import React, { use } from "react";
 import styled from "styled-components";
 import PopularProducts from "../containers/PopularProducts";

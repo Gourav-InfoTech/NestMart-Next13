@@ -53,14 +53,6 @@ const Navbar = () => {
               <Link href="/contact">Contact</Link>
             </li>
 
-
-            {/* <li>About</li>
-            <li>Shop</li>
-            <li>Vendors</li>
-            <li>Mega Menu</li>
-            <li>Blog</li>
-            <li>Pages</li>
-            <li>Contact</li> */}
           </ul>
         </div>
         <div className="navContact flex items-center">

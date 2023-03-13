@@ -1,8 +1,8 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TopProductCard from "../components/TopProductCard";
-import { useAnimation, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const topItemVariant = {
@@ -15,40 +15,10 @@ const TopProducts = ({ data }: any) => {
   const [electronics, setElectronics] = useState([]);
   const [women, setWomen] = useState([]);
   const [men, setMen] = useState([]);
-  const controls = useAnimation();
+
   const [TPref, inView] = useInView({
     triggerOnce: true
   });
-
-  // const [toBottom, setToBottom] = useState(true);
-  // const scrollY = useRef(0);
-
-  // const pageYscroll = () => {
-  //   if (scrollY.current > window.pageYOffset) {
-  //     setToBottom(false);
-  //   } else {
-  //     setToBottom(true);
-  //   }
-  //   scrollY.current = window.pageYOffset;
-  // };
-
-  // useEffect(() => {
-  //   window?.addEventListener("scroll", pageYscroll);
-
-  //   return () => {
-  //     window?.removeEventListener("scroll", pageYscroll);
-  //   };
-  // }, []);
-
-  // console.log(toBottom);
-
-  // useEffect(() => {
-  //   if (toBottom) {
-  //     controls.start("visible");
-  //   } else if (!toBottom && !inView) {
-  //     controls.start("hidden");
-  //   }
-  // }, [inView, setToBottom]);
 
 
   useEffect(() => {
@@ -79,3 +49,36 @@ const TopProducts = ({ data }: any) => {
 export default TopProducts;
 
 const TopProductsDiv = styled(motion.div)``;
+
+
+// for complex animation
+
+  // const [toBottom, setToBottom] = useState(true);
+  // const scrollY = useRef(0);
+
+  // const pageYscroll = () => {
+  //   if (scrollY.current > window.pageYOffset) {
+  //     setToBottom(false);
+  //   } else {
+  //     setToBottom(true);
+  //   }
+  //   scrollY.current = window.pageYOffset;
+  // };
+
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", pageYscroll);
+
+  //   return () => {
+  //     window?.removeEventListener("scroll", pageYscroll);
+  //   };
+  // }, []);
+
+  // console.log(toBottom);
+
+  // useEffect(() => {
+  //   if (toBottom) {
+  //     controls.start("visible");
+  //   } else if (!toBottom && !inView) {
+  //     controls.start("hidden");
+  //   }
+  // }, [inView, setToBottom]);

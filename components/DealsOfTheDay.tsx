@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { FiChevronRight } from "react-icons/fi";
 import styled from "styled-components";
 import { DOD_BANNER } from "../Utils/DATA";
 import DodBanner from "./DodBanner";
 import DodItem from "./DodItem";
-import { useAnimation, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const dodBoxVariant = {
@@ -14,39 +14,9 @@ const dodBoxVariant = {
 };
 
 const DealsOfTheDay = () => {
-  const controls = useAnimation();
   const [dodRef, inView] = useInView({
     triggerOnce: true,
   });
-  // const [toBottom, setToBottom] = useState(true);
-  // const scrollY = useRef(0);
-
-  // const pageYscroll = () => {
-  //   if (scrollY.current > window.pageYOffset) {
-  //     setToBottom(false);
-  //   } else {
-  //     setToBottom(true);
-  //   }
-  //   scrollY.current = window.pageYOffset;
-  // };
-
-  // useEffect(() => {
-  //   window?.addEventListener("scroll", pageYscroll);
-
-  //   return () => {
-  //     window?.removeEventListener("scroll", pageYscroll);
-  //   };
-  // }, []);
-
-  // console.log(toBottom);
-
-  // useEffect(() => {
-  //   if (toBottom) {
-  //     controls.start("visible");
-  //   } else if (!toBottom && !inView) {
-  //     controls.start("hidden");
-  //   }
-  // }, [inView, setToBottom]);
 
   return (
     <>
@@ -105,3 +75,35 @@ const DodBanners = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+
+// for complex animation
+  // const [toBottom, setToBottom] = useState(true);
+  // const scrollY = useRef(0);
+
+  // const pageYscroll = () => {
+  //   if (scrollY.current > window.pageYOffset) {
+  //     setToBottom(false);
+  //   } else {
+  //     setToBottom(true);
+  //   }
+  //   scrollY.current = window.pageYOffset;
+  // };
+
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", pageYscroll);
+
+  //   return () => {
+  //     window?.removeEventListener("scroll", pageYscroll);
+  //   };
+  // }, []);
+
+  // console.log(toBottom);
+
+  // useEffect(() => {
+  //   if (toBottom) {
+  //     controls.start("visible");
+  //   } else if (!toBottom && !inView) {
+  //     controls.start("hidden");
+  //   }
+  // }, [inView, setToBottom]);
