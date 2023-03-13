@@ -16,37 +16,39 @@ const TopProducts = ({ data }: any) => {
   const [women, setWomen] = useState([]);
   const [men, setMen] = useState([]);
   const controls = useAnimation();
-  const [TPref, inView] = useInView();
+  const [TPref, inView] = useInView({
+    triggerOnce: true
+  });
 
-  const [toBottom, setToBottom] = useState(true);
-  const scrollY = useRef(0);
+  // const [toBottom, setToBottom] = useState(true);
+  // const scrollY = useRef(0);
 
-  const pageYscroll = () => {
-    if (scrollY.current > window.pageYOffset) {
-      setToBottom(false);
-    } else {
-      setToBottom(true);
-    }
-    scrollY.current = window.pageYOffset;
-  };
+  // const pageYscroll = () => {
+  //   if (scrollY.current > window.pageYOffset) {
+  //     setToBottom(false);
+  //   } else {
+  //     setToBottom(true);
+  //   }
+  //   scrollY.current = window.pageYOffset;
+  // };
 
-  useEffect(() => {
-    window?.addEventListener("scroll", pageYscroll);
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", pageYscroll);
 
-    return () => {
-      window?.removeEventListener("scroll", pageYscroll);
-    };
-  }, []);
+  //   return () => {
+  //     window?.removeEventListener("scroll", pageYscroll);
+  //   };
+  // }, []);
 
-  console.log(toBottom);
+  // console.log(toBottom);
 
-  useEffect(() => {
-    if (toBottom) {
-      controls.start("visible");
-    } else if (!toBottom && !inView) {
-      controls.start("hidden");
-    }
-  }, [inView, setToBottom]);
+  // useEffect(() => {
+  //   if (toBottom) {
+  //     controls.start("visible");
+  //   } else if (!toBottom && !inView) {
+  //     controls.start("hidden");
+  //   }
+  // }, [inView, setToBottom]);
 
 
   useEffect(() => {
@@ -62,7 +64,7 @@ const TopProducts = ({ data }: any) => {
   return (
     <TopProductsDiv
       ref={TPref}
-      animate={controls}
+      animate={inView ? "visible" : "hidden"}
       variants={topItemVariant}
       initial="hidden"
       className="flex common_width "

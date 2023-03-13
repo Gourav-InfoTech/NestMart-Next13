@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Product_Api } from "@/Utils/Api";
 import React, { use } from "react";
 import styled from "styled-components";
@@ -24,14 +24,11 @@ interface HeroBannerDataT {
   paraFontSize: string;
 }
 
-
-const HomeContent = ({data}:any) => {
-  
-
+const HomeContent = ({ data }: any) => {
   return (
     <MainContent>
       <Banner data={HeroBannerData} />
-      <PopularProducts data={data}/>
+      <PopularProducts data={data} />
       <DealsOfTheDay />
     </MainContent>
   );

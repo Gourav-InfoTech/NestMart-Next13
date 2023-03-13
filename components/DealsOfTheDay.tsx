@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import styled from "styled-components";
@@ -15,45 +15,45 @@ const dodBoxVariant = {
 
 const DealsOfTheDay = () => {
   const controls = useAnimation();
-  const [dodRef, inView] = useInView();
-  const [toBottom, setToBottom] = useState(true);
-  const scrollY = useRef(0);
+  const [dodRef, inView] = useInView({
+    triggerOnce: true,
+  });
+  // const [toBottom, setToBottom] = useState(true);
+  // const scrollY = useRef(0);
 
-  const pageYscroll = () => {
-    if (scrollY.current > window.pageYOffset) {
-      setToBottom(false);
-    } else {
-      setToBottom(true);
-    }
-    scrollY.current = window.pageYOffset;
-  };
+  // const pageYscroll = () => {
+  //   if (scrollY.current > window.pageYOffset) {
+  //     setToBottom(false);
+  //   } else {
+  //     setToBottom(true);
+  //   }
+  //   scrollY.current = window.pageYOffset;
+  // };
 
-  useEffect(() => {
-    window?.addEventListener("scroll", pageYscroll);
+  // useEffect(() => {
+  //   window?.addEventListener("scroll", pageYscroll);
 
-    return () => {
-      window?.removeEventListener("scroll", pageYscroll);
-    };
-  }, []);
+  //   return () => {
+  //     window?.removeEventListener("scroll", pageYscroll);
+  //   };
+  // }, []);
 
-  console.log(toBottom);
+  // console.log(toBottom);
 
-
-  useEffect(() => {
-    if (toBottom) {
-      controls.start("visible");
-    } else if (!toBottom && !inView) {
-      controls.start("hidden");
-    }
-  }, [inView, setToBottom]);
-  
+  // useEffect(() => {
+  //   if (toBottom) {
+  //     controls.start("visible");
+  //   } else if (!toBottom && !inView) {
+  //     controls.start("hidden");
+  //   }
+  // }, [inView, setToBottom]);
 
   return (
     <>
       {/* ------------Dod - Deals of the day----------------- */}
       <Dod
         ref={dodRef}
-        animate={controls}
+        animate={inView ? "visible" : "hidden"}
         initial="hidden"
         variants={dodBoxVariant}
       >

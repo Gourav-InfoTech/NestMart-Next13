@@ -8,17 +8,15 @@ import { use } from "react";
 // import styled from "styled-components";
 import styles from "./page.module.css";
 
-const productsApi = async ()=>{
-  const res = await fetch(Product_Api+"/products");
+const productsApi = async () => {
+  const res = await fetch(Product_Api + "/products");
   const data = await res.json();
-  return data
-}
-
+  return data;
+};
 
 export default function Home() {
+  const data = use(productsApi());
 
-  const data = use(productsApi())
-  
   return (
     <>
       <div className=" common_width section_padding">
@@ -27,7 +25,7 @@ export default function Home() {
           <HomeContent data={data} />
         </div>
         <ShopByCategory />
-        <TopProducts  data={data}/>
+        <TopProducts data={data} />
         <BackToTop />
       </div>
     </>
@@ -38,4 +36,3 @@ export default function Home() {
 //   display: flex;
 //   gap: 20px;
 // `;
-
