@@ -11,7 +11,7 @@ const Content = ({ data }: { data: any }) => {
       <div className="item">
         <div>
           <div className="item_image ">
-            <Image src={data.image} alt="" />
+            <img src={data.image} alt="" />
           </div>
           <p className="text-xs py-2 text-[#adadad]">{data.category}</p>
           <h2 className="pb-2 text-[15px] font-[Quicksand] font-bold text-[#253d4e] leading-5">
