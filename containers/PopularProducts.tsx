@@ -1,5 +1,4 @@
 "use client"
-import React, { use, useEffect, useState } from "react";
 import styled from "styled-components";
 import PopularItemCard from "../components/PopularItemCard";
 

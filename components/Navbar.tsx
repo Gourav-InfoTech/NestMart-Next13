@@ -1,4 +1,4 @@
-// "use client"
+"use client";
 
 import React from "react";
 import { MdWindow } from "react-icons/md";
@@ -52,7 +52,6 @@ const Navbar = () => {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
-
           </ul>
         </div>
         <div className="navContact flex items-center">

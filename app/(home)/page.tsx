@@ -4,9 +4,11 @@ import ShopByCategory from "@/components/ShopByCategory";
 import Sidebar from "@/components/sidebar/Sidebar";
 import TopProducts from "@/containers/TopProducts";
 import { Product_Api } from "@/Utils/Api";
-import { use } from "react";
+import { Suspense, use, lazy } from "react";
 // import styled from "styled-components";
 import styles from "./page.module.css";
+
+// const HomeContent = lazy(() => import("../components/HomeContent"));
 
 const productsApi = async () => {
   const res = await fetch(Product_Api + "/products");
@@ -31,8 +33,3 @@ export default function Home() {
     </>
   );
 }
-
-// const TopContainer = styled.div`
-//   display: flex;
-//   gap: 20px;
-// `;

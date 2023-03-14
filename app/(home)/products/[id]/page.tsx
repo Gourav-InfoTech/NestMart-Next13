@@ -1,6 +1,7 @@
 // "use client"
+import { Product_Api } from "@/Utils/Api";
 import React from "react";
-import { Product_Api } from "../../../Utils/Api";
+// import { Product_Api } from "../../../Utils/Api";
 import { use } from "react";
 import Content from "./Content";
 

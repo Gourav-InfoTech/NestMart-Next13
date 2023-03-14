@@ -1,7 +1,4 @@
-import Appbar from "@/components/Appbar";
-import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/Navbar";
-import Head from "next/head";
+
 import "./globals.css";
 
 export const metadata = {
@@ -27,11 +24,8 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Appbar />
-        <Navbar />
         {children}
-        <Footer />
-        </body>
+      </body>
     </html>
   );
 }
