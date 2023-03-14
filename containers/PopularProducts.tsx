@@ -9,7 +9,7 @@ const PopularProducts = ({data} :any) => {
     <>
       <PopularProductsDiv className="section_padding">
         <div className="flex pb-[30px] justify-between items-center ">
-          <div className="Popular_P_Title">
+          <div className="Popular_P_Title"> 
             <h1>Popular Products</h1>
           </div>
           <div>

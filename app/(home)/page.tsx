@@ -4,7 +4,7 @@ import ShopByCategory from "@/components/ShopByCategory";
 import Sidebar from "@/components/sidebar/Sidebar";
 import TopProducts from "@/containers/TopProducts";
 import { Product_Api } from "@/Utils/Api";
-import { Suspense, use, lazy } from "react";
+import { use } from "react";
 // import styled from "styled-components";
 import styles from "./page.module.css";
 
@@ -17,7 +17,9 @@ const productsApi = async () => {
 };
 
 export default function Home() {
-  const data = use(productsApi());
+  const data = use(productsApi());  
+  console.log(data);
+  
 
   return (
     <>
