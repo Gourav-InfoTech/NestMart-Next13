@@ -9,7 +9,7 @@ const DodItem = () => {
     <>
       <DoditemDiv>
         <div className="Dod_img">
-          <img src="Images/dod-1.png" alt="" />
+          <img src="/Images/dod-1.png" alt="" />
         </div>
         <div className="Dod_content bg-transparent">
           <div className="Dod_timer mb-5 flex justify-around px-3">
