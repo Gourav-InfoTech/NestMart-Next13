@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
-import Image from "next/image";
 
 const Content = ({ data }: { data: any }) => {
   return (

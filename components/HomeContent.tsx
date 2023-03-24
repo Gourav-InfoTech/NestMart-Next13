@@ -1,5 +1,5 @@
 "use client";
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import styled from "styled-components";
 import PopularProducts from "../containers/PopularProducts";
 import Banner from "./Banner";
@@ -23,7 +23,10 @@ interface HeroBannerDataT {
   paraFontSize: string;
 }
 
+
 const HomeContent = ({ data }: any) => {
+  
+
   return (
     <MainContent>
       <Banner data={HeroBannerData} />

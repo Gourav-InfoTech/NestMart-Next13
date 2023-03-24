@@ -7,6 +7,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { BsCart3 } from 'react-icons/bs';
 
 import Dropdown from './Dropdown';
+import Link from 'next/link';
 
 
 const Appbar = () => {
@@ -62,7 +63,8 @@ const Appbar = () => {
                             <ul className='flex items-end gap-4 text-gray-600 text-sm'>
                                 <Uli> <Span><IoIosGitCompare /></Span> <P >Compare</P></Uli>
                                 <Uli><Span><FaRegHeart /></Span><P>WishList</P></Uli>
-                                <Uli><Span><BsCart3 /></Span><P>Cart</P></Uli>
+                               <Link href={"/addtocart"}>
+                                <Uli><Span><BsCart3 /></Span><P>Cart</P></Uli></Link>
                                 <Uli><Span><RxPerson /></Span><P>Account</P></Uli>
                             </ul>
                         </div>

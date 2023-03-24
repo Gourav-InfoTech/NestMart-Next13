@@ -1,11 +1,16 @@
-"use client"
-
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
-import Link from "next/link"
+import { GiHighKick } from "react-icons/gi";
+import Link from "next/link";
+import { useCtx } from "@/context/CartContext";
 
 const PopularItemCard = ({ data }: { data: any }) => {
+  const { cart, addToCart, removeItem, } = useCtx();
+
+  const added = cart.find((el) => el.id === data.id) ? true : false;
+
   return (
     <PICard>
       <div>
@@ -28,10 +33,28 @@ const PopularItemCard = ({ data }: { data: any }) => {
         <p className="text-[#3bb77e] font-bold font-[Quicksand]">
           ${data.price}
         </p>
-        <button className="flex gap-2 items-center py-[6px] px-[15px] rounded-sm bg-[#def9ec] text-[#3bb77e] hover:bg-[#3bb77e] hover:text-[#def9ec] hover:-translate-y-1 transition-all duration-300">
-          <HiOutlineShoppingCart />
-          <span className="text-sm font-semibold">Add</span>
-        </button>
+
+        {!added ? (
+          <button
+            onClick={() => {
+              addToCart(data)
+            }}
+            className="flex gap-2 items-center py-[6px] px-[15px] rounded-sm bg-[#def9ec] text-[#3bb77e] hover:bg-[#3bb77e] hover:text-[#def9ec] hover:-translate-y-1 transition-all duration-300"
+          >
+            <HiOutlineShoppingCart />
+            <span className="text-sm font-semibold">Add</span>
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              removeItem(data.id)
+            }}
+            className="flex gap-2 items-center py-[6px] px-[15px] rounded-sm bg-[#def9ec] text-[#3bb77e] hover:bg-[#3bb77e] hover:text-[#def9ec] hover:-translate-y-1 transition-all duration-300"
+          >
+            <GiHighKick />
+            <span className="text-sm font-semibold">Remove</span>
+          </button>
+        )}
       </div>
     </PICard>
   );

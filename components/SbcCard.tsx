@@ -1,7 +1,7 @@
 "use client"
-
 import React from "react";
 import styled from "styled-components";
+// import { useCtx } from "@/context/CartContext";
 
 const SbcCard = () => {
   return (

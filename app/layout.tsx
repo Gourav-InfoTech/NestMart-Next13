@@ -1,4 +1,5 @@
 
+import GlobalProvider from "@/components/GlobalProvider";
 import "./globals.css";
 
 export const metadata = {
@@ -24,7 +25,9 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <GlobalProvider>
         {children}
+        </GlobalProvider>
       </body>
     </html>
   );
