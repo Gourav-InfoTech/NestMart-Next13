@@ -3,13 +3,11 @@ import React, { useState, createContext, useContext } from "react";
 const contextCart = createContext<{
   cart: any[];
   addToCart: (s: any) => any;
-  useCtx: () => any;
   clearCart: () => any;
   removeItem: (s:number)=> any;
 }>({
   cart: [],
   addToCart: (s) => {},
-  useCtx: () => {},
   clearCart: () => {},
   removeItem: (s)=>{},
 });
@@ -29,17 +27,12 @@ const CartContext = ({ children }: any) => {
     setCart(prev=> prev.filter((el,indx)=> el.id !== id ))
   };
 
-  // const removeItem = (id: number) => {
-  //   setCart(cart.filter((i)=>(i.id !== id)))
-  // }
-
-
   const clearCart = () => {
     setCart([]);
   };
 
   return (
-    <contextCart.Provider value={{ cart, addToCart, removeItem, clearCart, useCtx }}>
+    <contextCart.Provider value={{ cart, addToCart, removeItem, clearCart }}>
       {children}
     </contextCart.Provider>
   );

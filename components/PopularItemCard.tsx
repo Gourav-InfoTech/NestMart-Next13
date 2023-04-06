@@ -74,5 +74,6 @@ const PICard = styled.div`
   img {
     height: 130px;
     margin: auto;
+    
   }
 `;

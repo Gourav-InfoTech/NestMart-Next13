@@ -1,7 +1,5 @@
-// "use client"
 import { Product_Api } from "@/Utils/Api";
 import React from "react";
-// import { Product_Api } from "../../../Utils/Api";
 import { use } from "react";
 import Content from "./Content";
 
@@ -13,8 +11,8 @@ const getItem = async (id: number) => {
 
 const id = ({ params }: any) => {
   const id = params.id;
-
   const item = use(getItem(id));
+
   console.log(id);
 
   return (

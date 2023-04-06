@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-        <div className=" common_width section_padding">
+        <div className="common_width section_padding">
           <div className="flex gap-[20px]">
             <Sidebar />
             <HomeContent data={data} />

@@ -8,9 +8,9 @@ const BackToTop = () => {
 
   useEffect(() => {
     const checkHeight = () => {
-      if (!show && window.pageYOffset > 100) {
+      if (!show && window.scrollY > 100) {
         setShow(true);
-      } else if (show && window.pageYOffset <= 100) {
+      } else if (show && window.scrollY <= 100) {
         setShow(false);
       }
     };

@@ -1,4 +1,3 @@
-
 import GlobalProvider from "@/components/GlobalProvider";
 import "./globals.css";
 
